@@ -1,0 +1,33 @@
+{
+  "name": "nether church interior",
+  "items": [
+    {
+      "id": "minecraft:smooth_quartz_slab",
+      "count": 40,
+      "completed": false,
+      "hidden": false,
+      "notes": ""
+    },
+    {
+      "id": "minecraft:tuff_bricks",
+      "count": 1107,
+      "completed": false,
+      "hidden": false,
+      "notes": ""
+    },
+    {
+      "id": "minecraft:dark_oak_shelf",
+      "count": 198,
+      "completed": false,
+      "hidden": false,
+      "notes": ""
+    },
+    {
+      "id": "minecraft:pale_oak_shelf",
+      "count": 30,
+      "completed": false,
+      "hidden": false,
+      "notes": ""
+    }
+  ]
+}
