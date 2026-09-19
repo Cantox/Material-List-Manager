@@ -8,8 +8,8 @@ async function openList() {
         return null;
     }
 
-    document.getElementById("par0").innerHTML = JSON.stringify(materialList, null, 2).replace(/\n/g, "<br>");
-    document.getElementById("par1").innerHTML = "";
+    fillTable(materialList);
+
     return materialList;
 }
 
@@ -36,6 +36,75 @@ function validMaterialList(materialList) {
 }
 
 
+// Displays list in the table
+function fillTable(materialList) {
+    const listTable = document.getElementById("listTable");
+    const hiddenTable = document.getElementById("hiddenTable");
+ 
+    // Remove any previously rendered rows, keep the header (first row)
+    while (listTable.rows.length > 1) {
+        listTable.deleteRow(1);
+    }
+
+    while (hiddenTable.rows.length > 1) {
+        hiddenTable.deleteRow(1);
+    }
+ 
+    for (let i = 0; i < materialList.items.length; i++) {
+        const item = materialList.items[i];
+        const table = (item.hidden) ? hiddenTable : listTable;
+ 
+        const r = document.createElement("tr");
+ 
+        // BLOCK
+        const cId = document.createElement("td");
+        cId.innerHTML = item.id; // ! FORMAT BLOCK NAME
+        r.appendChild(cId);
+ 
+        // AMOUNT
+        const cCount = document.createElement("td");
+        cCount.innerHTML = item.count;
+        r.appendChild(cCount);
+ 
+        // COMPLETED
+        const cCompleted = document.createElement("td");
+        const input = document.createElement("input");
+        input.type = "checkbox";
+        input.checked = item.completed;
+        input.addEventListener("change", () => {
+            item.completed = input.checked;
+        });
+        cCompleted.appendChild(input);
+        r.appendChild(cCompleted);
+
+        // HIDE
+        const cHide = document.createElement("td");
+        const hideInput = document.createElement("input");
+        hideInput.type = "checkbox";
+        hideInput.checked = item.hidden;
+        hideInput.addEventListener("change", () => {
+            item.hidden = hideInput.checked;
+            fillTable(materialList);
+        });
+        cHide.appendChild(hideInput);
+        r.appendChild(cHide);
+ 
+        // NOTES
+        const cNotes = document.createElement("td");
+        const notesInput = document.createElement("input");
+        notesInput.type = "text";
+        notesInput.value = item.notes;
+        notesInput.addEventListener("input", () => {
+            item.notes = notesInput.value;
+        });
+        cNotes.appendChild(notesInput);
+        r.appendChild(cNotes);
+ 
+        table.appendChild(r);
+    }
+}
+
+
 // Returns a litematica material list converted to the correct format
 async function convertList() {
     const originalList = await openFileJSON( document.getElementById("fileInputOriginalList").files[0] );
@@ -45,8 +114,6 @@ async function convertList() {
         alert("The opened json file is not a compatible item list");
         return null;
     }
-    
-    document.getElementById("par0").innerHTML = JSON.stringify(originalList, null, 2).replace(/\n/g, "<br>");
 
     const materialList = {
         "name": originalList.name,
@@ -64,7 +131,6 @@ async function convertList() {
         materialList.items.push(item);
     }
 
-    document.getElementById("par1").innerHTML = JSON.stringify(materialList, null, 2).replace(/\n/g, "<br>");
     downloadObjectAsJSON(materialList, materialList.name);
     return materialList;
 }

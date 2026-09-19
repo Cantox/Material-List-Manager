@@ -6,6 +6,7 @@
     <meta name="author" content="Cantoni Alessandro">
     <meta name="description" content="Webapp to view and manage litematica material lists">
 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
     <link rel="stylesheet" href="./style.css">
 </head>
 
@@ -18,6 +19,27 @@
     <input type="file" id="fileInputOriginalList">
     <button onclick="convertList()">converti</button> <br><br>
 
-    <p id="par0"></p> <br><br>
-    <p id="par1"></p>
+    <table id="listTable">
+        <tr>
+            <th>BLOCK</th>
+            <th>AMOUNT</th>
+            <th>COMPLETED</th>
+            <th>HIDE</th>
+            <th>NOTES</th>
+        </tr>
+    </table>
+
+    <details>
+        <summary>HIDDEN ITEMS</summary>
+        <table id="hiddenTable">
+            <tr>
+                <th>BLOCK</th>
+                <th>AMOUNT</th>
+                <th>COMPLETED</th>
+                <th>HIDE</th>
+                <th>NOTES</th>
+            </tr>
+        </table>
+    </details>
+
 </body>
