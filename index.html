@@ -13,12 +13,21 @@
 <body>
     <script src="./script.js"></script>
     
-    <input type="file" id="fileInput">
-    <button onclick="openList()">apri</button> <br><br>
+<div class="header_div">
+    <div style="margin-bottom: 15px;">
+        <label>Pick a list to view:</label><br>
+        <input type="file" id="fileInput">
+        <button onclick="openList()">Open</button>
+    </div>
 
-    <input type="file" id="fileInputOriginalList">
-    <button onclick="convertList()">converti</button> <br><br>
+    <div>
+        <label>Pick a list to convert:</label><br>
+        <input type="file" id="fileInputOriginalList">
+        <button onclick="convertList()">Convert</button>    
+    </div>
+</div>
 
+    <!-- Items Table -->
     <table id="listTable">
         <tr>
             <th>BLOCK</th>
@@ -29,6 +38,7 @@
         </tr>
     </table>
 
+    <!-- Hidden Items Table -->
     <details>
         <summary>HIDDEN ITEMS</summary>
         <table id="hiddenTable">

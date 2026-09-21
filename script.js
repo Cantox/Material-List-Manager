@@ -3,7 +3,15 @@ async function openList() {
     const materialList = await openFileJSON( document.getElementById("fileInput").files[0] );
     if(!materialList) return null;
 
-    if(!validMaterialList(materialList)){
+    const materialListSchema = {
+        id : "string",
+        count : "number",
+        completed : "boolean",
+        hidden : "boolean",
+        notes : "string"
+    };
+
+    if(!validList(materialList, materialListSchema)){
         alert("The opened json file is not a compatible item list\n\nIF THE JSON FILE IS THE ONE CREATED BY LITEMATICA, CONVERT IT FIRST TO THE RIGHT FORMAT");
         return null;
     }
@@ -11,28 +19,6 @@ async function openList() {
     fillTable(materialList);
 
     return materialList;
-}
-
-function validMaterialList(materialList) {
-    if (typeof materialList !== "object" || materialList === null)
-        return false;
-
-    if(typeof materialList.name !== "string" || !Array.isArray(materialList.items))
-        return false;
-    
-    for(let i=0; i<materialList.items.length; i++){
-        const item = materialList.items[i];
-        if(typeof item !== "object" || item === null)
-            return false;
-        if(typeof item.id !== "string" ||
-        typeof item.count !== "number" ||
-        typeof item.completed !== "boolean" ||
-        typeof item.hidden !== "boolean" ||
-        typeof item.notes !== "string" )
-            return false;
-    }
-
-    return true;
 }
 
 
@@ -58,12 +44,12 @@ function fillTable(materialList) {
  
         // BLOCK
         const cId = document.createElement("td");
-        cId.innerHTML = item.id; // ! FORMAT BLOCK NAME
+        cId.textContent = formatBlockName(item.id);
         r.appendChild(cId);
  
         // AMOUNT
         const cCount = document.createElement("td");
-        cCount.innerHTML = item.count;
+        cCount.textContent = item.count;
         r.appendChild(cCount);
  
         // COMPLETED
@@ -71,8 +57,10 @@ function fillTable(materialList) {
         const input = document.createElement("input");
         input.type = "checkbox";
         input.checked = item.completed;
+        if(item.completed) r.style.backgroundColor = "green";
         input.addEventListener("change", () => {
             item.completed = input.checked;
+            fillTable(materialList);
         });
         cCompleted.appendChild(input);
         r.appendChild(cCompleted);
@@ -104,13 +92,25 @@ function fillTable(materialList) {
     }
 }
 
+function formatBlockName(id) {
+    return id
+        .replace(/^minecraft:/, "")
+        .replace(/_/g, " ")
+        .replace(/\b\w/g, c => c.toUpperCase());
+}
+
 
 // Returns a litematica material list converted to the correct format
 async function convertList() {
     const originalList = await openFileJSON( document.getElementById("fileInputOriginalList").files[0] );
     if(!originalList) return null;
 
-    if(!validOriginalMaterialList(originalList)){
+    const originalListSchema = {
+        id : "string",
+        count: "number"
+    };
+
+    if(!validList(originalList, originalListSchema)){
         alert("The opened json file is not a compatible item list");
         return null;
     }
@@ -135,24 +135,25 @@ async function convertList() {
     return materialList;
 }
 
-function validOriginalMaterialList(materialList) {
+
+
+function validList(materialList, itemSchema) {
     if (typeof materialList !== "object" || materialList === null)
         return false;
 
     if(typeof materialList.name !== "string" || !Array.isArray(materialList.items))
         return false;
     
-    for(let i=0; i<materialList.items.length; i++) {
-        const item = materialList.items[i];
+    for(const item of materialList.items) {
         if(typeof item !== "object" || item === null)
             return false;
-        if(typeof item.id !== "string" || typeof item.count !== "number")
-            return false;
+        for(const field in itemSchema)
+            if(typeof item[field] !== itemSchema[field]) 
+                return false;
     }
 
     return true;
 }
-
 
 function openFileJSON(file) {
     return new Promise((resolve) => {
