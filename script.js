@@ -1,3 +1,6 @@
+const defaultName = "Open a List from the Panel Above";
+document.getElementById("listNameLabel").innerText = defaultName;
+
 // Returns a json list already converted to the correct format
 async function openList() {
     const materialList = await openFileJSON( document.getElementById("fileInput").files[0] );
@@ -24,21 +27,18 @@ async function openList() {
 
 // Displays list in the table
 function fillTable(materialList) {
-    const listTable = document.getElementById("listTable");
-    const hiddenTable = document.getElementById("hiddenTable");
- 
-    // Remove any previously rendered rows, keep the header (first row)
-    while (listTable.rows.length > 1) {
-        listTable.deleteRow(1);
-    }
+    const listBody = document.querySelector("#listTable tbody");
+    const hiddenBody = document.querySelector("#hiddenTable tbody");
 
-    while (hiddenTable.rows.length > 1) {
-        hiddenTable.deleteRow(1);
-    }
+    document.getElementById("listNameLabel").innerText = materialList.name;
+
+    // Remove any previously rendered rows
+    listBody.innerHTML = "";
+    hiddenBody.innerHTML = "";
  
     for (let i = 0; i < materialList.items.length; i++) {
         const item = materialList.items[i];
-        const table = (item.hidden) ? hiddenTable : listTable;
+        const table = (item.hidden) ? hiddenBody : listBody;
  
         const r = document.createElement("tr");
  
@@ -49,7 +49,7 @@ function fillTable(materialList) {
  
         // AMOUNT
         const cCount = document.createElement("td");
-        cCount.textContent = item.count;
+        cCount.innerHTML = item.count + "<br>" + (item.count/64).toFixed(1) + " (x64)<br>" + (item.count/64/27).toFixed(2) + " (SB)";
         r.appendChild(cCount);
  
         // COMPLETED
@@ -57,7 +57,7 @@ function fillTable(materialList) {
         const input = document.createElement("input");
         input.type = "checkbox";
         input.checked = item.completed;
-        if(item.completed) r.style.backgroundColor = "green";
+        if (item.completed) r.classList.add("completed");
         input.addEventListener("change", () => {
             item.completed = input.checked;
             fillTable(materialList);
@@ -79,13 +79,12 @@ function fillTable(materialList) {
  
         // NOTES
         const cNotes = document.createElement("td");
-        const notesInput = document.createElement("input");
-        notesInput.type = "text";
-        notesInput.value = item.notes;
-        notesInput.addEventListener("input", () => {
-            item.notes = notesInput.value;
+        const notesTextArea = document.createElement("textArea");
+        notesTextArea.innerText = item.notes;
+        notesTextArea.addEventListener("change", () => {
+            item.notes = notesTextArea.value;
         });
-        cNotes.appendChild(notesInput);
+        cNotes.appendChild(notesTextArea);
         r.appendChild(cNotes);
  
         table.appendChild(r);
@@ -209,4 +208,15 @@ function downloadObjectAsJSON(object, filename = "materialList.json") {
 
     // Rimuovo url temporaneo
     URL.revokeObjectURL(url);
+}
+
+
+
+function clearSite() {
+    document.querySelector("#listTable tbody").innerHTML = "";
+    document.querySelector("#hiddenTable tbody").innerHTML = "";
+    document.getElementById("listNameLabel").innerText = defaultName;
+
+    document.getElementById("fileInput").value = "";
+    document.getElementById("fileInputOriginalList").value = "";
 }

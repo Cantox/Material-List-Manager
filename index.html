@@ -12,6 +12,8 @@
 
 <body>
     <script src="./script.js"></script>
+
+    <h1>LITEMATICA MATERIAL LIST MANAGER</h1>
     
 <div class="header_div">
     <div style="margin-bottom: 15px;">
@@ -23,12 +25,18 @@
     <div>
         <label>Pick a list to convert:</label><br>
         <input type="file" id="fileInputOriginalList">
-        <button onclick="convertList()">Convert</button>    
+        <button onclick="convertList()">Convert</button><br>
     </div>
 </div>
 
+<hr>
+
+<div class="table_div">
+    <h2 id="listNameLabel">Open a List from the Panel Above</h2>
+
     <!-- Items Table -->
     <table id="listTable">
+        <thead>
         <tr>
             <th>BLOCK</th>
             <th>AMOUNT</th>
@@ -36,12 +44,17 @@
             <th>HIDE</th>
             <th>NOTES</th>
         </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
     </table>
 
     <!-- Hidden Items Table -->
     <details>
         <summary>HIDDEN ITEMS</summary>
         <table id="hiddenTable">
+            <thead>
             <tr>
                 <th>BLOCK</th>
                 <th>AMOUNT</th>
@@ -49,7 +62,19 @@
                 <th>HIDE</th>
                 <th>NOTES</th>
             </tr>
+            </thead>
+            <tbody>
+                
+            </tbody>
         </table>
     </details>
+</div>
+
+<hr>
+
+<div style="min-width: 100%; text-align: center;">
+    <button class="custom_button save">Save</button>
+    <button class="custom_button clear" onclick="clearSite()">Clear</button>
+</div>
 
 </body>

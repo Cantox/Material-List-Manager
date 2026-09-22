@@ -1,21 +1,76 @@
 :root {
   --white: #ffffff;
-  --gray-1: #f2f2f2;
-  --gray-2: #d9d9d9;
-  --gray-3: #6e6e6e;
+  --gray: #cecece;
+  --gray-2: #dbdbdb;
   --black: #1c1c1c;
-  --highlight-1: #a7e0ff;
+  --highlight-1: #b2dff8;
   --highlight-2: #8cd4fb;
   --highlight-3: #6acafd;
   --green: #bef3d3;
+  --green-2: #7cdaa1;
+  --red: #f88390;
+  --red-2: #ca5f71;
 }
 
 body {
     font-family: "Inconsolata", monospace;
-    font-size: 18px;
+    font-size: 20px;
 
-    margin: 5%;
+    margin: 50px auto;
+    padding: 0 50px;
+    max-width: 1000px;
 }
+
+h1 {
+    min-width: 100%;
+    text-align: center;
+}
+
+hr {
+    margin-top: 50px;
+    margin-bottom: 40px;
+
+    color: var(--gray);
+    max-width: 75%;
+}
+
+
+.custom_button {
+    background-color: var(--white);
+    border-radius: 20px;
+
+    padding: 8px 16px;
+
+    min-width: 25%;
+    width: 25%;
+    
+    font-family: inherit;
+    font-size: inherit;
+
+    cursor: pointer;
+}
+
+
+.custom_button.save {
+    border: 2px solid var(--green-2);
+}
+
+.custom_button.save:hover {
+    background-color: var(--green);
+}
+
+
+.custom_button.clear {
+    border: 2px solid var(--red-2);
+}
+
+.custom_button.clear:hover {
+    background-color: var(--red);
+}
+
+
+
+/* -- HEADER -- */
 
 .header_div {
     width: 100%;
@@ -74,4 +129,122 @@ input[type="file"]::file-selector-button:hover {
 
 .header_div button:hover{
     background-color: var(--highlight-3);
+}
+
+.header_div label{
+    padding: 8px 16px;
+}
+
+
+
+/* -- TABLE -- */
+
+.table_div {
+    width: 100%;
+    background-color: var(--white);
+
+    box-sizing: border-box;
+}
+
+
+.table_div h2 {
+    min-width: 100%;
+    text-align: center;
+}
+
+
+.table_div table {
+    background-color: var(--white);
+    color: var(--black);
+
+    font-family: inherit;
+    font-size: inherit;
+
+    width: 100%;
+    min-width: 100%;
+
+    border-spacing: 10px;
+}
+
+
+.table_div thead th {
+    border: 3px solid var(--highlight-2);
+    border-radius: 15px;
+
+    min-height: 60px;
+    height: 60px;
+}
+
+.table_div thead th:first-child {
+    min-width: 35%;
+    width: 35%;
+}
+
+.table_div thead th:last-child {
+    min-width: 35%;
+    width: 35%;
+}
+
+
+.table_div tbody td {
+    min-height: 30px;
+    height: 30px;
+
+    text-align: center;
+}
+
+.table_div tbody td:first-child {
+    min-width: 35%;
+    width: 35%;
+}
+
+.table_div tbody td:last-child {
+    min-width: 35%;
+    width: 35%;
+}
+
+.table_div tbody tr.completed td:first-child {
+    border-left: 4px solid var(--green-2);
+    background-color: var(--green);
+}
+
+
+.table_div tbody td textarea {
+    min-height: 80px;
+    min-width: 100%;
+
+    resize: none;
+}
+
+
+.table_div details {
+    width: 100%;
+    min-width: 100%;
+    box-sizing: border-box;
+
+    background-color: var(--white);
+    color: var(--black);
+
+    font-family: inherit;
+    font-size: inherit;
+
+    margin-top: 10px;
+    padding: 0 10px;
+}
+
+.table_div details summary {
+    background-color: var(--gray-2);
+    color: var(--black);
+    border-radius: 15px;
+
+    padding: 8px 16px;
+
+    font-family: inherit;
+    font-size: inherit;
+
+    cursor: pointer;
+}
+
+.table_div details summary:hover {
+    opacity: 0.85;
 }
