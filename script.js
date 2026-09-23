@@ -1,10 +1,15 @@
 const defaultName = "Open a List from the Panel Above";
 document.getElementById("listNameLabel").innerText = defaultName;
 
-// Returns a json list already converted to the correct format
+let currentList = null;
+
+// Opens a json list that is already in the correct format
 async function openList() {
     const materialList = await openFileJSON( document.getElementById("fileInput").files[0] );
-    if(!materialList) return null;
+    if(!materialList) {
+        currentList = null;
+        return;
+    }
 
     const materialListSchema = {
         id : "string",
@@ -16,12 +21,12 @@ async function openList() {
 
     if(!validList(materialList, materialListSchema)){
         alert("The opened json file is not a compatible item list\n\nIF THE JSON FILE IS THE ONE CREATED BY LITEMATICA, CONVERT IT FIRST TO THE RIGHT FORMAT");
-        return null;
+        currentList = null;
+        return;
     }
 
+    currentList = materialList;
     fillTable(materialList);
-
-    return materialList;
 }
 
 
@@ -99,10 +104,10 @@ function formatBlockName(id) {
 }
 
 
-// Returns a litematica material list converted to the correct format
+// Converts a litematica list to the correct format and downloads the new json file
 async function convertList() {
     const originalList = await openFileJSON( document.getElementById("fileInputOriginalList").files[0] );
-    if(!originalList) return null;
+    if(!originalList) return;
 
     const originalListSchema = {
         id : "string",
@@ -111,7 +116,7 @@ async function convertList() {
 
     if(!validList(originalList, originalListSchema)){
         alert("The opened json file is not a compatible item list");
-        return null;
+        return;
     }
 
     const materialList = {
@@ -131,7 +136,6 @@ async function convertList() {
     }
 
     downloadObjectAsJSON(materialList, materialList.name);
-    return materialList;
 }
 
 
@@ -219,4 +223,13 @@ function clearSite() {
 
     document.getElementById("fileInput").value = "";
     document.getElementById("fileInputOriginalList").value = "";
+}
+
+function saveList() {
+    if(!currentList) {
+        alert("OPEN A LIST FIRST");
+        return;
+    }
+
+    downloadObjectAsJSON(currentList, currentList.name);
 }

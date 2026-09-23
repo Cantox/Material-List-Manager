@@ -11,8 +11,6 @@
 </head>
 
 <body>
-    <script src="./script.js"></script>
-
     <h1>LITEMATICA MATERIAL LIST MANAGER</h1>
     
 <div class="header_div">
@@ -32,7 +30,7 @@
 <hr>
 
 <div class="table_div">
-    <h2 id="listNameLabel">Open a List from the Panel Above</h2>
+    <h2 id="listNameLabel"></h2>
 
     <!-- Items Table -->
     <table id="listTable">
@@ -73,8 +71,9 @@
 <hr>
 
 <div style="min-width: 100%; text-align: center;">
-    <button class="custom_button save">Save</button>
+    <button class="custom_button save" onclick="saveList()">Save</button>
     <button class="custom_button clear" onclick="clearSite()">Clear</button>
 </div>
 
+<script src="./script.js"></script>
 </body>
