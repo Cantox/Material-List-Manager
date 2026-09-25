@@ -1,6 +1,3 @@
-const defaultName = "Open a List from the Panel Above";
-document.getElementById("listNameLabel").innerText = defaultName;
-
 let currentList = null;
 
 // Opens a json list that is already in the correct format
@@ -28,81 +25,6 @@ async function openList() {
     currentList = materialList;
     fillTable(materialList);
 }
-
-
-// Displays list in the table
-function fillTable(materialList) {
-    const listBody = document.querySelector("#listTable tbody");
-    const hiddenBody = document.querySelector("#hiddenTable tbody");
-
-    document.getElementById("listNameLabel").innerText = materialList.name;
-
-    // Remove any previously rendered rows
-    listBody.innerHTML = "";
-    hiddenBody.innerHTML = "";
- 
-    for (let i = 0; i < materialList.items.length; i++) {
-        const item = materialList.items[i];
-        const table = (item.hidden) ? hiddenBody : listBody;
- 
-        const r = document.createElement("tr");
- 
-        // BLOCK
-        const cId = document.createElement("td");
-        cId.textContent = formatBlockName(item.id);
-        r.appendChild(cId);
- 
-        // AMOUNT
-        const cCount = document.createElement("td");
-        cCount.innerHTML = item.count + "<br>" + (item.count/64).toFixed(1) + " (x64)<br>" + (item.count/64/27).toFixed(2) + " (SB)";
-        r.appendChild(cCount);
- 
-        // COMPLETED
-        const cCompleted = document.createElement("td");
-        const input = document.createElement("input");
-        input.type = "checkbox";
-        input.checked = item.completed;
-        if (item.completed) r.classList.add("completed");
-        input.addEventListener("change", () => {
-            item.completed = input.checked;
-            fillTable(materialList);
-        });
-        cCompleted.appendChild(input);
-        r.appendChild(cCompleted);
-
-        // HIDE
-        const cHide = document.createElement("td");
-        const hideInput = document.createElement("input");
-        hideInput.type = "checkbox";
-        hideInput.checked = item.hidden;
-        hideInput.addEventListener("change", () => {
-            item.hidden = hideInput.checked;
-            fillTable(materialList);
-        });
-        cHide.appendChild(hideInput);
-        r.appendChild(cHide);
- 
-        // NOTES
-        const cNotes = document.createElement("td");
-        const notesTextArea = document.createElement("textArea");
-        notesTextArea.innerText = item.notes;
-        notesTextArea.addEventListener("change", () => {
-            item.notes = notesTextArea.value;
-        });
-        cNotes.appendChild(notesTextArea);
-        r.appendChild(cNotes);
- 
-        table.appendChild(r);
-    }
-}
-
-function formatBlockName(id) {
-    return id
-        .replace(/^minecraft:/, "")
-        .replace(/_/g, " ")
-        .replace(/\b\w/g, c => c.toUpperCase());
-}
-
 
 // Converts a litematica list to the correct format and downloads the new json file
 async function convertList() {
@@ -138,8 +60,7 @@ async function convertList() {
     downloadObjectAsJSON(materialList, materialList.name);
 }
 
-
-
+// Checks if the js object is a valid material list based on the given item schema
 function validList(materialList, itemSchema) {
     if (typeof materialList !== "object" || materialList === null)
         return false;
@@ -157,6 +78,7 @@ function validList(materialList, itemSchema) {
 
     return true;
 }
+
 
 function openFileJSON(file) {
     return new Promise((resolve) => {
@@ -214,17 +136,7 @@ function downloadObjectAsJSON(object, filename = "materialList.json") {
     URL.revokeObjectURL(url);
 }
 
-
-
-function clearSite() {
-    document.querySelector("#listTable tbody").innerHTML = "";
-    document.querySelector("#hiddenTable tbody").innerHTML = "";
-    document.getElementById("listNameLabel").innerText = defaultName;
-
-    document.getElementById("fileInput").value = "";
-    document.getElementById("fileInputOriginalList").value = "";
-}
-
+// Downloads the currently opened list as a json file
 function saveList() {
     if(!currentList) {
         alert("OPEN A LIST FIRST");
