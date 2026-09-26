@@ -3,6 +3,8 @@ document.getElementById("listNameLabel").innerText = defaultName;
 
 document.documentElement.setAttribute("data-theme", "dark");
 
+document.getElementById("calcPanel").style.display = "none";
+
 
 // Displays list in the table
 function fillTable(materialList) {
@@ -93,4 +95,35 @@ function clearSite() {
 function toggleTheme() {
     const root = document.documentElement;
     root.setAttribute("data-theme", root.getAttribute("data-theme") === "light" ? "dark" : "light");
+}
+
+
+
+function toggleCalc() {
+    const panel = document.getElementById("calcPanel");
+    panel.style.display = (panel.style.display === "none") ? "block" : "none";
+}
+
+function calculate() {
+    const input = document.getElementById("calcInput").value;
+    const output = document.getElementById("calcRes");
+
+    const cleaned = input.replace(/\s+/g, '');
+    if (!/^[0-9+\-*/^().]+$/.test(cleaned)) {
+        output.textContent = '= ??';
+        return;
+    }
+
+    try {
+        const jsExpr = cleaned.replace(/\^/g, '**');
+        const result = Function('"use strict"; return (' + jsExpr + ')')();
+
+        if (typeof result !== 'number' || isNaN(result) || !isFinite(result)) {
+            output.textContent = '= ??';
+        } else {
+            output.textContent = '= ' + result;
+        }
+    } catch (e) {
+        output.textContent = '= ??';
+    }
 }

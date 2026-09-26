@@ -14,9 +14,22 @@
 <div class="title_wrapper">
     <h1>LITEMATICA MATERIAL LIST MANAGER</h1>
     <div style="min-width: 100%;">
-        <button class="custom_button" onclick="toggleTheme()">Theme Switch</button>
+    <button class="custom_button" onclick="toggleTheme()">Theme Switch</button>
+
+    <span class="dropdown_wrapper">
         <button class="custom_button">Block Sorting</button>
-        <button class="custom_button">Calculator</button>
+
+        <div></div>
+    </span>
+        
+    <span class="dropdown_wrapper">
+        <button class="custom_button" onclick="toggleCalc()">Calculator</button>
+
+        <div id="calcPanel" class="calc_panel">
+            <input type="text" id="calcInput" placeholder="es. 3+4" onkeydown="if(event.key==='Enter') calculate()">
+            <div id="calcRes" class="result_div">= ??</div>
+        </div>
+    </span>
     </div>
 </div>
 
