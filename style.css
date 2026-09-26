@@ -152,7 +152,32 @@ hr {
 }
 
 
-.calc_panel {
+
+.sort_option {
+    background-color: var(--bg-0);
+    color: var(--text);
+
+    border: 1px solid var(--highlight-3);
+    border-radius: 11px;
+
+    font-family: inherit;
+    font-size: inherit;
+
+    margin-bottom: 4px;
+    padding: 4px;
+    width: 100%;
+
+    cursor: pointer;
+}
+
+.sort_option:hover {
+    background-color: var(--highlight-3);
+    border: 4px solid var(--highlight-3);
+}
+
+
+
+.dropdown_panel {
     background: var(--highlight-1);
     
     border: 2px solid var(--highlight-2);
@@ -170,7 +195,7 @@ hr {
     z-index: 100;
 }
 
-.calc_panel input[type="text"] {
+.dropdown_panel input[type="text"] {
     background-color: var(--bg-0);
     color: var(--text);
 
@@ -187,11 +212,11 @@ hr {
     padding: 6px;
 }
 
-.calc_panel input[type="text"]:focus {
+.dropdown_panel input[type="text"]:focus {
     outline: 2px solid var(--highlight-3);
 }
 
-.calc_panel .result_div {
+.dropdown_panel .result_div {
     color: var(--text);
 
     font-family: inherit;

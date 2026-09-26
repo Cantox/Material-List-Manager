@@ -17,15 +17,23 @@
     <button class="custom_button" onclick="toggleTheme()">Theme Switch</button>
 
     <span class="dropdown_wrapper">
-        <button class="custom_button">Block Sorting</button>
+        <button class="custom_button" onclick="toggleSort()">Block Sorting</button>
 
-        <div></div>
+        <div id="sortPanel" class="dropdown_panel">
+            <button class="sort_option" onclick="sortItems('id')">Name (A-Z)</button><br>
+            <button class="sort_option" onclick="sortItems('idReversed')">Name (Z-A)</button><br>
+            <button class="sort_option" onclick="sortItems('amount')">Amount ↓</button><br>
+            <button class="sort_option" onclick="sortItems('amountReversed')">Amount ↑</button><br>
+            <button class="sort_option" onclick="sortItems('completed')">Completed ↓</button><br>
+            <button class="sort_option" onclick="sortItems('completedReversed')">Completed ↑</button><br>
+            <button class="sort_option" onclick="sortItems('category')" style="margin-bottom: 0 !important;">Category</button>
+        </div>
     </span>
         
     <span class="dropdown_wrapper">
         <button class="custom_button" onclick="toggleCalc()">Calculator</button>
 
-        <div id="calcPanel" class="calc_panel">
+        <div id="calcPanel" class="dropdown_panel">
             <input type="text" id="calcInput" placeholder="es. 3+4" onkeydown="if(event.key==='Enter') calculate()">
             <div id="calcRes" class="result_div">= ??</div>
         </div>

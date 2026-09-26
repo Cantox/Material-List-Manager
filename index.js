@@ -3,6 +3,7 @@ document.getElementById("listNameLabel").innerText = defaultName;
 
 document.documentElement.setAttribute("data-theme", "dark");
 
+document.getElementById("sortPanel").style.display = "none";
 document.getElementById("calcPanel").style.display = "none";
 
 
@@ -98,12 +99,20 @@ function toggleTheme() {
 }
 
 
+// Toggles sort method menu
+function toggleSort() {
+    const panel = document.getElementById("sortPanel");
+    panel.style.display = (panel.style.display === "none") ? "block" : "none";
+}
 
+
+// Toggles calculator panel
 function toggleCalc() {
     const panel = document.getElementById("calcPanel");
     panel.style.display = (panel.style.display === "none") ? "block" : "none";
 }
 
+// Evaluates the written expression (in calc input)
 function calculate() {
     const input = document.getElementById("calcInput").value;
     const output = document.getElementById("calcRes");

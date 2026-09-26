@@ -145,3 +145,23 @@ function saveList() {
 
     downloadObjectAsJSON(currentList, currentList.name);
 }
+
+
+function sortItems(criteria) {
+    if(!currentList) return;
+
+    const validSorts = {
+        id: (a, b) => formatBlockName(a.id).localeCompare( formatBlockName(b.id) ),
+        idReversed: (a, b) => formatBlockName(b.id).localeCompare( formatBlockName(a.id) ),
+        amount: (a, b) => b.count - a.count,
+        amountReversed: (a, b) => a.count - b.count,
+        completed: (a, b) => Number(b.completed) - Number(a.completed),
+        completedReversed: (a, b) => Number(a.completed) - Number(b.completed),
+        category: null
+    };
+
+    if(validSorts[criteria])
+        currentList.items.sort(validSorts[criteria]);
+
+    fillTable(currentList);
+}
