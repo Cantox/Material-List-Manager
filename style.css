@@ -3,6 +3,7 @@
     --bg-0: #ffffff;
     --bg-1: #cecece;
     --bg-2: #dbdbdb;
+    --bg-icon: #dcdcdc;
     --text: #1c1c1c;
 
     --highlight-1: #b2dff8;
@@ -21,6 +22,7 @@
     --bg-0: #202020;
     --bg-1: #484848;
     --bg-2: #535353;
+    --bg-icon: #303030;
     --text: #ffffff;
 
     --highlight-1: #2d3339;
@@ -61,7 +63,7 @@ hr {
 }
 
 
-.title_hr {
+.thick_hr {
     color: var(--bg-1);
     background-color: var(--bg-1);
 
@@ -298,6 +300,20 @@ input[type="file"]::file-selector-button:hover {
 
 
 
+/* -- ICON -- */
+
+.icon_wrapper {
+    background-color: var(--bg-icon);
+
+    border: 3px solid var(--bg-1);
+    border-radius: 6px;
+
+    padding: 3px;
+    margin-left: 4px;
+}
+
+
+
 /* -- TABLE -- */
 
 .table_div {
@@ -336,34 +352,40 @@ input[type="file"]::file-selector-button:hover {
 
     min-height: 60px;
     height: 60px;
+
+    padding: 0px 15px;
 }
 
 .table_div thead th:first-child {
-    min-width: 35%;
-    width: 35%;
+    min-width: 33%;
+    width: 33%;
 }
 
 .table_div thead th:last-child {
-    min-width: 35%;
-    width: 35%;
+    min-width: 30%;
+    width: 30%;
 }
 
 
 .table_div tbody td {
-    min-height: 30px;
-    height: 30px;
+    min-height: 90px;
+    height: 90px;
 
     text-align: center;
 }
 
 .table_div tbody td:first-child {
-    min-width: 35%;
-    width: 35%;
-}
+    height: 100%;
 
-.table_div tbody td:last-child {
-    min-width: 35%;
-    width: 35%;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+
+    align-items: center;
+    text-align: left;
+
+    border-left: 4px solid var(--bg-0);
+    padding-right: 6px;
 }
 
 .table_div tbody tr.completed td:first-child {
@@ -379,7 +401,7 @@ input[type="file"]::file-selector-button:hover {
     border: 1px solid var(--bg-1);
     border-radius: 5px;
 
-    min-height: 80px;
+    min-height: 100%;
     min-width: 100%;
     resize: none;
 

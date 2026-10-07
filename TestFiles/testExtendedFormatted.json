@@ -1,0 +1,376 @@
+{
+  "name": "Test Extended Formatted Title",
+  "items": [
+    {
+      "id": "minecraft:smooth_quartz_slab",
+      "count": 40,
+      "completed": true,
+      "hidden": false,
+      "notes": ""
+    },
+    {
+      "id": "minecraft:tuff_bricks",
+      "count": 1107,
+      "completed": false,
+      "hidden": false,
+      "notes": ""
+    },
+    {
+      "id": "minecraft:dark_oak_shelf",
+      "count": 198,
+      "completed": true,
+      "hidden": false,
+      "notes": ""
+    },
+    {
+      "id": "minecraft:pale_oak_shelf",
+      "count": 30,
+      "completed": true,
+      "hidden": false,
+      "notes": ""
+    },
+    {
+      "id": "minecraft:white_wool",
+      "count": 18,
+      "completed": false,
+      "hidden": true,
+      "notes": ""
+    },
+    {
+      "id": "minecraft:dirt",
+      "count": 142,
+      "completed": false,
+      "hidden": true,
+      "notes": ""
+    },
+    {
+      "id": "minecraft:chiseled_tuff_bricks",
+      "count": 4,
+      "completed": false,
+      "hidden": false,
+      "notes": ""
+    },
+    {
+      "id": "minecraft:dark_oak_log",
+      "count": 144,
+      "completed": true,
+      "hidden": false,
+      "notes": ""
+    },
+    {
+      "id": "minecraft:smooth_quartz_stairs",
+      "count": 257,
+      "completed": true,
+      "hidden": false,
+      "notes": ""
+    },
+    {
+      "id": "minecraft:netherrack",
+      "count": 14,
+      "completed": false,
+      "hidden": false,
+      "notes": ""
+    },
+    {
+      "id": "minecraft:snow",
+      "count": 34,
+      "completed": false,
+      "hidden": true,
+      "notes": ""
+    },
+    {
+      "id": "minecraft:dark_oak_trapdoor",
+      "count": 66,
+      "completed": true,
+      "hidden": false,
+      "notes": ""
+    },
+    {
+      "id": "minecraft:dark_oak_planks",
+      "count": 208,
+      "completed": true,
+      "hidden": false,
+      "notes": ""
+    },
+    {
+      "id": "minecraft:copper_ore",
+      "count": 60,
+      "completed": false,
+      "hidden": true,
+      "notes": ""
+    },
+    {
+      "id": "minecraft:light_blue_wool",
+      "count": 30,
+      "completed": false,
+      "hidden": true,
+      "notes": ""
+    },
+    {
+      "id": "minecraft:iron_chain",
+      "count": 144,
+      "completed": false,
+      "hidden": false,
+      "notes": ""
+    },
+    {
+      "id": "minecraft:tuff_brick_slab",
+      "count": 16,
+      "completed": false,
+      "hidden": false,
+      "notes": ""
+    },
+    {
+      "id": "minecraft:quartz_pillar",
+      "count": 320,
+      "completed": false,
+      "hidden": false,
+      "notes": "QUARZO NORMALE x2"
+    },
+    {
+      "id": "minecraft:gravel",
+      "count": 179,
+      "completed": false,
+      "hidden": true,
+      "notes": ""
+    },
+    {
+      "id": "minecraft:dark_oak_stairs",
+      "count": 72,
+      "completed": true,
+      "hidden": false,
+      "notes": ""
+    },
+    {
+      "id": "minecraft:stripped_dark_oak_log",
+      "count": 1430,
+      "completed": false,
+      "hidden": false,
+      "notes": "IN MAGENTA SHULKER TO STRIP"
+    },
+    {
+      "id": "minecraft:oak_planks",
+      "count": 3,
+      "completed": false,
+      "hidden": true,
+      "notes": ""
+    },
+    {
+      "id": "minecraft:chiseled_stone_bricks",
+      "count": 120,
+      "completed": false,
+      "hidden": false,
+      "notes": ""
+    },
+    {
+      "id": "minecraft:pale_oak_trapdoor",
+      "count": 49,
+      "completed": true,
+      "hidden": false,
+      "notes": ""
+    },
+    {
+      "id": "minecraft:stripped_dark_oak_wood",
+      "count": 92,
+      "completed": false,
+      "hidden": false,
+      "notes": "IN MAGENTA SHULKER TO STRIP"
+    },
+    {
+      "id": "minecraft:smooth_quartz",
+      "count": 89,
+      "completed": true,
+      "hidden": false,
+      "notes": ""
+    },
+    {
+      "id": "minecraft:dark_oak_slab",
+      "count": 1139,
+      "completed": false,
+      "hidden": false,
+      "notes": ""
+    },
+    {
+      "id": "minecraft:dark_oak_fence_gate",
+      "count": 6,
+      "completed": false,
+      "hidden": false,
+      "notes": ""
+    },
+    {
+      "id": "minecraft:oak_stairs",
+      "count": 6,
+      "completed": false,
+      "hidden": true,
+      "notes": ""
+    },
+    {
+      "id": "minecraft:obsidian",
+      "count": 58,
+      "completed": false,
+      "hidden": false,
+      "notes": ""
+    },
+    {
+      "id": "minecraft:tuff_brick_wall",
+      "count": 290,
+      "completed": false,
+      "hidden": false,
+      "notes": ""
+    },
+    {
+      "id": "minecraft:bookshelf",
+      "count": 109,
+      "completed": false,
+      "hidden": false,
+      "notes": ""
+    },
+    {
+      "id": "minecraft:stone_brick_stairs",
+      "count": 142,
+      "completed": false,
+      "hidden": false,
+      "notes": ""
+    },
+    {
+      "id": "minecraft:oak_shelf",
+      "count": 27,
+      "completed": false,
+      "hidden": true,
+      "notes": ""
+    },
+    {
+      "id": "minecraft:coal_ore",
+      "count": 107,
+      "completed": false,
+      "hidden": true,
+      "notes": ""
+    },
+    {
+      "id": "minecraft:polished_tuff",
+      "count": 35,
+      "completed": false,
+      "hidden": false,
+      "notes": ""
+    },
+    {
+      "id": "minecraft:oak_leaves",
+      "count": 50,
+      "completed": false,
+      "hidden": false,
+      "notes": "A CASA!!!"
+    },
+    {
+      "id": "minecraft:chiseled_bookshelf",
+      "count": 23,
+      "completed": false,
+      "hidden": false,
+      "notes": ""
+    },
+    {
+      "id": "minecraft:tuff_brick_stairs",
+      "count": 54,
+      "completed": false,
+      "hidden": false,
+      "notes": ""
+    },
+    {
+      "id": "minecraft:oak_trapdoor",
+      "count": 3,
+      "completed": false,
+      "hidden": true,
+      "notes": ""
+    },
+    {
+      "id": "minecraft:clay",
+      "count": 281,
+      "completed": false,
+      "hidden": true,
+      "notes": ""
+    },
+    {
+      "id": "minecraft:end_rod",
+      "count": 192,
+      "completed": false,
+      "hidden": false,
+      "notes": ""
+    },
+    {
+      "id": "minecraft:stone",
+      "count": 9464,
+      "completed": false,
+      "hidden": true,
+      "notes": ""
+    },
+    {
+      "id": "minecraft:stone_bricks",
+      "count": 795,
+      "completed": false,
+      "hidden": false,
+      "notes": ""
+    },
+    {
+      "id": "minecraft:pale_moss_carpet",
+      "count": 48,
+      "completed": true,
+      "hidden": false,
+      "notes": ""
+    },
+    {
+      "id": "minecraft:iron_bars",
+      "count": 120,
+      "completed": false,
+      "hidden": false,
+      "notes": ""
+    },
+    {
+      "id": "minecraft:emerald_ore",
+      "count": 1,
+      "completed": false,
+      "hidden": true,
+      "notes": ""
+    },
+    {
+      "id": "minecraft:dark_oak_fence",
+      "count": 132,
+      "completed": false,
+      "hidden": false,
+      "notes": ""
+    },
+    {
+      "id": "minecraft:stripped_pale_oak_log",
+      "count": 2,
+      "completed": true,
+      "hidden": false,
+      "notes": ""
+    },
+    {
+      "id": "minecraft:diorite",
+      "count": 30,
+      "completed": false,
+      "hidden": true,
+      "notes": ""
+    },
+    {
+      "id": "minecraft:deepslate_bricks",
+      "count": 132,
+      "completed": false,
+      "hidden": false,
+      "notes": ""
+    },
+    {
+      "id": "minecraft:glowstone",
+      "count": 131,
+      "completed": false,
+      "hidden": false,
+      "notes": ""
+    },
+    {
+      "id": "minecraft:iron_ore",
+      "count": 5,
+      "completed": false,
+      "hidden": true,
+      "notes": ""
+    }
+  ]
+}

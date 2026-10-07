@@ -6,6 +6,8 @@ document.documentElement.setAttribute("data-theme", "dark");
 document.getElementById("sortPanel").style.display = "none";
 document.getElementById("calcPanel").style.display = "none";
 
+document.getElementById("calcInput").addEventListener("input", calculate);
+
 
 // Displays list in the table
 function fillTable(materialList) {
@@ -24,9 +26,17 @@ function fillTable(materialList) {
  
         const r = document.createElement("tr");
  
-        // BLOCK
+        // BLOCK (icon + id)
         const cId = document.createElement("td");
-        cId.textContent = formatBlockName(item.id);
+        const iconWrapper = document.createElement("div");
+        iconWrapper.className = "icon_wrapper";
+        const icon = document.createElement("div");
+        icon.className = getItemClass(item.id);
+        icon.style.width = "64px";
+        icon.style.height = "64px";
+        iconWrapper.appendChild(icon);
+        cId.appendChild(iconWrapper);
+        cId.appendChild(document.createTextNode( formatBlockName(item.id) ));
         r.appendChild(cId);
  
         // AMOUNT
@@ -80,6 +90,12 @@ function formatBlockName(id) {
         .replace(/\b\w/g, c => c.toUpperCase());
 }
 
+function getItemClass(id) {
+    if(!id || typeof id !== "string") return;
+
+    return "rc-item rc-" + id.replace(":", "_");
+}
+
 
 // Clears file inputs and table
 function clearSite() {
@@ -114,20 +130,27 @@ function toggleCalc() {
 
 // Evaluates the written expression (in calc input)
 function calculate() {
-    const input = document.getElementById("calcInput").value;
+    const input = document.getElementById("calcInput").value.replace(/\s+/g, ''); // Removes spaces and tabs from input (g = all occurrencies)
     const output = document.getElementById("calcRes");
 
-    const cleaned = input.replace(/\s+/g, '');
-    if (!/^[0-9+\-*/^().]+$/.test(cleaned)) {
+    if (!/^[0-9+\-*/^().]+$/.test(input)) { // + = at least one char, ^[...]$ = all the string must be made of the specified chars (Checks if this is not respected)
         output.textContent = '= ??';
         return;
     }
 
     try {
-        const jsExpr = cleaned.replace(/\^/g, '**');
+        const jsExpr = input.replace(/\^/g, '**'); // Converts pow symbol to js equivalent (g is for global = all occurrencies)
+        
+        /* Creates function
+        
+        "use strict" --> strict mode, better error detection and some dangerous practices are avoided
+        return (jsExpr) --> calculates the expression
+
+        the () at the end execute the function immediatly after creation */
+
         const result = Function('"use strict"; return (' + jsExpr + ')')();
 
-        if (typeof result !== 'number' || isNaN(result) || !isFinite(result)) {
+        if (typeof result !== 'number' || isNaN(result) || !isFinite(result)) { // check if is a number and if is valid
             output.textContent = '= ??';
         } else {
             output.textContent = '= ' + result;
