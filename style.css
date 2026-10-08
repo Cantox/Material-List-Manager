@@ -51,6 +51,12 @@ body {
 
 h1 {
     color: var(--text);
+    font-size: 50px;
+}
+
+h2 {
+    color: var(--text);
+    margin-left: 15px;
 }
 
 hr {
@@ -67,7 +73,7 @@ hr {
     color: var(--bg-1);
     background-color: var(--bg-1);
 
-    margin-top: 20px;
+    margin: 50px 0px;
 
     max-width: 100%;
 
@@ -78,6 +84,24 @@ hr {
 }
 
 
+
+/* -- TITLE -- */
+
+.title_wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    min-width: 100%;
+    width: 100%;
+
+    margin: 0;
+}
+
+
+
+/* -- CUSTOM BUTTONS -- */
 
 .custom_button {
     background-color: var(--bg-0);
@@ -99,7 +123,18 @@ hr {
 
 .custom_button:hover {
     background-color: var(--highlight-3);
-    border: 2px solid var(--highlight-3);
+    border: 2px solid var(--highlight-2);
+}
+
+
+.custom_button.theme {
+    min-width: 0;
+    width: 50px;
+    height: 50px;
+
+    border-radius: 50%;
+    
+    padding: 0px;
 }
 
 
@@ -122,14 +157,202 @@ hr {
 
 
 
-.title_wrapper {
+/* -- ICON -- */
+
+.icon_wrapper {
+    background-color: var(--bg-icon);
+
+    border: 3px solid var(--bg-1);
+    border-radius: 6px;
+
+    padding: 3px;
+    margin-left: 4px;
+}
+
+
+
+/* -- CRAFTING RECIPIES -- */
+
+.crafting_title_wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    min-width: 100%;
+    width: 100%;
+
+    margin: 0px;
+}
+
+.crafting_title_wrapper input[type="text"] {
+    background-color: var(--bg-0);
+    color: var(--text);
+
+    border: 2px solid var(--bg-2);
+    border-radius: 5px;
+
+    min-width: 300px;
+    width: 300px;
+
+    font-family: inherit;
+    font-size: 18px;
+
+    padding: 5px 10px;
+}
+
+.crafting_title_wrapper input[type="text"]:focus {
+    border: 2px solid var(--highlight-3);
+    outline: 0;
+}
+
+
+.crafting_recipies_holder {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+
+    min-width: 100%;
+    width: 100%;
+
+    gap: 20px;
+}
+
+.recipie {
+    background-color: var(--bg-0);
+
+    border: 4px solid var(--highlight-2);
+    border-radius: 15px;
+
+    min-width: 200px;
+    width: 200px;
+    min-height: 200px;
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 10px;
+}
+
+.recipie label {
+    color: var(--text);
+
+    text-align: center;
+    font-family: inherit;
+    font-size: 24px;
+
+    margin-bottom: 4px;
+}
+
+.recipie table {
+    border-spacing: 7px;
+    margin-top: auto;
+    margin-bottom: 0;
+}
+
+.recipie table td {
+    background-color: var(--bg-icon);
+
+    border: 3px solid var(--bg-1);
+    border-radius: 6px;
+
+    vertical-align: middle;
+
+    padding: 5px;
+}
+
+.recipie table td div {
+    margin: 0 auto;
+}
+
+
+
+/* -- HEADER -- */
+
+.header_div {
+    width: 100%;
+    background-color: var(--highlight-1);
+
+    padding: 15px;
+    box-sizing: border-box;
+
+    border-radius: 30px;
+}
+
+.header_div input[type="file"] {
+    background-color: var(--bg-0);
+    color: var(--text);
+
+    border: 2px solid var(--highlight-3);
+    border-radius: 15px;
+
+    font-family: inherit;
+    font-size: inherit;
+
+    margin-top: 5px;
+    min-width: 87%;
+}
+
+input[type="file"]::file-selector-button {
+    background-color: var(--highlight-2);
+    color: var(--text);
+
+    border: none;
+
+    padding: 8px 12px;
+    margin-right: 10px;
+
+    font-family: inherit;
+    font-size: inherit;
+
+    cursor: pointer;
+}
+
+input[type="file"]::file-selector-button:hover {
+    background-color: var(--highlight-3);
+}
+
+.header_div button {
+    background-color: var(--highlight-2);
+    color: var(--text);color: var(--text);
+
+    border: 2px solid var(--highlight-3);
+    border-radius: 20px;
+
+    padding: 8px 16px;
+
+    font-family: inherit;
+    font-size: inherit;
+
+    cursor: pointer;
+}
+
+.header_div button:hover{
+    background-color: var(--highlight-3);
+}
+
+.header_div label{
+    color: var(--text);
+
+    padding: 8px 16px;
+}
+
+
+
+/* -- DROPDOWNS -- */
+
+.button_wrapper {
     display: flex; 
     flex-direction: column;
     
     align-items: center;
+
+    margin-top: 27px;
 }
 
-.title_wrapper div {
+.button_wrapper div {
     display: flex;
 
     justify-content: center;
@@ -225,91 +448,6 @@ hr {
     font-size: inherit;
 
     padding: 5px;
-}
-
-
-
-/* -- HEADER -- */
-
-.header_div {
-    width: 100%;
-    background-color: var(--highlight-1);
-
-    padding: 15px;
-    box-sizing: border-box;
-
-    border-radius: 30px;
-}
-
-.header_div input[type="file"] {
-    background-color: var(--bg-0);
-    color: var(--text);
-
-    border: 2px solid var(--highlight-3);
-    border-radius: 15px;
-
-    font-family: inherit;
-    font-size: inherit;
-
-    min-width: 85%;
-}
-
-input[type="file"]::file-selector-button {
-    background-color: var(--highlight-2);
-    color: var(--text);
-
-    border: none;
-
-    padding: 8px 12px;
-    margin-right: 10px;
-
-    font-family: inherit;
-    font-size: inherit;
-
-    cursor: pointer;
-}
-
-input[type="file"]::file-selector-button:hover {
-    background-color: var(--highlight-3);
-}
-
-.header_div button {
-    background-color: var(--highlight-2);
-    color: var(--text);color: var(--text);
-
-    border: 2px solid var(--highlight-3);
-    border-radius: 20px;
-
-    padding: 8px 16px;
-
-    font-family: inherit;
-    font-size: inherit;
-
-    cursor: pointer;
-}
-
-.header_div button:hover{
-    background-color: var(--highlight-3);
-}
-
-.header_div label{
-    color: var(--text);
-
-    padding: 8px 16px;
-}
-
-
-
-/* -- ICON -- */
-
-.icon_wrapper {
-    background-color: var(--bg-icon);
-
-    border: 3px solid var(--bg-1);
-    border-radius: 6px;
-
-    padding: 3px;
-    margin-left: 4px;
 }
 
 
@@ -412,7 +550,8 @@ input[type="file"]::file-selector-button:hover {
 }
 
 .table_div tbody td textarea:focus {
-    outline: 1px solid var(--highlight-3);
+    border: 1px solid var(--highlight-3);
+    outline: 0;
 }
 
 

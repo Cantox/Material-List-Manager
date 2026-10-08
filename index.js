@@ -2,6 +2,7 @@ const defaultName = "Open a List from the Panel Above";
 document.getElementById("listNameLabel").innerText = defaultName;
 
 document.documentElement.setAttribute("data-theme", "dark");
+document.getElementById("themeButton").innerHTML = "<span style='display: inline-block; font-size: 28px;'>⏾</span>";
 
 document.getElementById("sortPanel").style.display = "none";
 document.getElementById("calcPanel").style.display = "none";
@@ -111,7 +112,15 @@ function clearSite() {
 // Toggles between light and dark theme
 function toggleTheme() {
     const root = document.documentElement;
-    root.setAttribute("data-theme", root.getAttribute("data-theme") === "light" ? "dark" : "light");
+    const button = document.getElementById("themeButton");
+    if(root.getAttribute("data-theme") === "light") {
+        root.setAttribute("data-theme", "dark");
+        button.innerHTML = "<span style='display: inline-block; font-size: 28px;'>⏾</span>";
+    }
+    else {
+        root.setAttribute("data-theme", "light");
+        button.innerHTML = "<span style='display: inline-block; font-size: 32px;'>☀</span>";
+    }
 }
 
 
@@ -119,6 +128,7 @@ function toggleTheme() {
 function toggleSort() {
     const panel = document.getElementById("sortPanel");
     panel.style.display = (panel.style.display === "none") ? "block" : "none";
+    document.getElementById("calcPanel").style.display = "none";
 }
 
 
@@ -126,6 +136,7 @@ function toggleSort() {
 function toggleCalc() {
     const panel = document.getElementById("calcPanel");
     panel.style.display = (panel.style.display === "none") ? "block" : "none";
+    document.getElementById("sortPanel").style.display = "none";
 }
 
 // Evaluates the written expression (in calc input)
