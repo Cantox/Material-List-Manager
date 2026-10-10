@@ -1,0 +1,26 @@
+{
+  "recipies": [
+    [
+      "minecraft:orange_stained_glass",
+      "minecraft:orange_stained_glass",
+      "minecraft:orange_stained_glass",
+      "minecraft:orange_stained_glass",
+      "minecraft:orange_stained_glass",
+      "minecraft:orange_stained_glass",
+      "",
+      "",
+      ""
+    ],
+    [
+      "minecraft:glass_pane",
+      "minecraft:glass_pane",
+      "minecraft:glass_pane",
+      "minecraft:glass_pane",
+      "minecraft:orange_dye",
+      "minecraft:glass_pane",
+      "minecraft:glass_pane",
+      "minecraft:glass_pane",
+      "minecraft:glass_pane"
+    ]
+  ]
+}

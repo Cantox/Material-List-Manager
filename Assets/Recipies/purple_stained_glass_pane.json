@@ -1,0 +1,26 @@
+{
+  "recipies": [
+    [
+      "minecraft:purple_stained_glass",
+      "minecraft:purple_stained_glass",
+      "minecraft:purple_stained_glass",
+      "minecraft:purple_stained_glass",
+      "minecraft:purple_stained_glass",
+      "minecraft:purple_stained_glass",
+      "",
+      "",
+      ""
+    ],
+    [
+      "minecraft:glass_pane",
+      "minecraft:glass_pane",
+      "minecraft:glass_pane",
+      "minecraft:glass_pane",
+      "minecraft:purple_dye",
+      "minecraft:glass_pane",
+      "minecraft:glass_pane",
+      "minecraft:glass_pane",
+      "minecraft:glass_pane"
+    ]
+  ]
+}

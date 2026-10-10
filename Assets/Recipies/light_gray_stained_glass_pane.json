@@ -1,0 +1,26 @@
+{
+  "recipies": [
+    [
+      "minecraft:light_gray_stained_glass",
+      "minecraft:light_gray_stained_glass",
+      "minecraft:light_gray_stained_glass",
+      "minecraft:light_gray_stained_glass",
+      "minecraft:light_gray_stained_glass",
+      "minecraft:light_gray_stained_glass",
+      "",
+      "",
+      ""
+    ],
+    [
+      "minecraft:glass_pane",
+      "minecraft:glass_pane",
+      "minecraft:glass_pane",
+      "minecraft:glass_pane",
+      "minecraft:light_gray_dye",
+      "minecraft:glass_pane",
+      "minecraft:glass_pane",
+      "minecraft:glass_pane",
+      "minecraft:glass_pane"
+    ]
+  ]
+}

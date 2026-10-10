@@ -1,0 +1,37 @@
+{
+  "recipies": [
+    [
+      "minecraft:copper_block",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "minecraft:copper_nugget",
+      "minecraft:copper_nugget",
+      "minecraft:copper_nugget",
+      "minecraft:copper_nugget",
+      "minecraft:copper_nugget",
+      "minecraft:copper_nugget",
+      "minecraft:copper_nugget",
+      "minecraft:copper_nugget",
+      "minecraft:copper_nugget"
+    ],
+    [
+      "minecraft:waxed_copper_block",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "recipies": [
+    [
+      "minecraft:iron_block",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "minecraft:iron_nugget",
+      "minecraft:iron_nugget",
+      "minecraft:iron_nugget",
+      "minecraft:iron_nugget",
+      "minecraft:iron_nugget",
+      "minecraft:iron_nugget",
+      "minecraft:iron_nugget",
+      "minecraft:iron_nugget",
+      "minecraft:iron_nugget"
+    ]
+  ]
+}

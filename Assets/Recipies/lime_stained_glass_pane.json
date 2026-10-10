@@ -1,0 +1,26 @@
+{
+  "recipies": [
+    [
+      "minecraft:lime_stained_glass",
+      "minecraft:lime_stained_glass",
+      "minecraft:lime_stained_glass",
+      "minecraft:lime_stained_glass",
+      "minecraft:lime_stained_glass",
+      "minecraft:lime_stained_glass",
+      "",
+      "",
+      ""
+    ],
+    [
+      "minecraft:glass_pane",
+      "minecraft:glass_pane",
+      "minecraft:glass_pane",
+      "minecraft:glass_pane",
+      "minecraft:lime_dye",
+      "minecraft:glass_pane",
+      "minecraft:glass_pane",
+      "minecraft:glass_pane",
+      "minecraft:glass_pane"
+    ]
+  ]
+}

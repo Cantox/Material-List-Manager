@@ -1,0 +1,26 @@
+{
+  "recipies": [
+    [
+      "minecraft:gold_block",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "minecraft:gold_nugget",
+      "minecraft:gold_nugget",
+      "minecraft:gold_nugget",
+      "minecraft:gold_nugget",
+      "minecraft:gold_nugget",
+      "minecraft:gold_nugget",
+      "minecraft:gold_nugget",
+      "minecraft:gold_nugget",
+      "minecraft:gold_nugget"
+    ]
+  ]
+}

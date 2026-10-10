@@ -1,0 +1,26 @@
+{
+  "recipies": [
+    [
+      "minecraft:black_wool",
+      "minecraft:black_wool",
+      "minecraft:black_wool",
+      "minecraft:oak_planks",
+      "minecraft:oak_planks",
+      "minecraft:oak_planks",
+      "",
+      "",
+      ""
+    ],
+    [
+      "minecraft:black_dye",
+      "minecraft:white_bed",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ]
+}

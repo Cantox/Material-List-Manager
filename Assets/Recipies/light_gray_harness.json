@@ -1,0 +1,26 @@
+{
+  "recipies": [
+    [
+      "minecraft:light_gray_dye",
+      "minecraft:white_harness",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "minecraft:leather",
+      "minecraft:leather",
+      "minecraft:leather",
+      "minecraft:glass",
+      "minecraft:light_gray_wool",
+      "minecraft:glass",
+      "",
+      "",
+      ""
+    ]
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "recipies": [
+    [
+      "minecraft:purple_dye",
+      "minecraft:white_bed",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "minecraft:purple_wool",
+      "minecraft:purple_wool",
+      "minecraft:purple_wool",
+      "minecraft:oak_planks",
+      "minecraft:oak_planks",
+      "minecraft:oak_planks",
+      "",
+      "",
+      ""
+    ]
+  ]
+}

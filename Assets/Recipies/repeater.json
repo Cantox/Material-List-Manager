@@ -1,0 +1,15 @@
+{
+  "recipies": [
+    [
+      "minecraft:redstone_torch",
+      "minecraft:redstone",
+      "minecraft:redstone_torch",
+      "minecraft:stone",
+      "minecraft:stone",
+      "minecraft:stone",
+      "",
+      "",
+      ""
+    ]
+  ]
+}

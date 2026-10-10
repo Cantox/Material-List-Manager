@@ -1,6 +1,3 @@
-const defaultName = "Open a List from the Panel Above";
-document.getElementById("listNameLabel").innerText = defaultName;
-
 document.documentElement.setAttribute("data-theme", "dark");
 document.getElementById("themeButton").innerHTML = "<span style='display: inline-block; font-size: 28px;'>⏾</span>";
 
@@ -8,6 +5,8 @@ document.getElementById("sortPanel").style.display = "none";
 document.getElementById("calcPanel").style.display = "none";
 
 document.getElementById("calcInput").addEventListener("input", calculate);
+
+clearSite();
 
 
 // Displays list in the table
@@ -98,14 +97,44 @@ function getItemClass(id) {
 }
 
 
+async function fillRecipies(materialList) {
+    const recipiesHolder = document.getElementById("recipiesHolder");
+    recipiesHolder.innerHTML = "";
+    for(const item of materialList.items) {
+        const recipies = await getRecipies(item.id);
+        if(!recipies) continue;
+        for(const recipie of recipies)
+            recipiesHolder.append(recipie);
+    }
+}
+
+
 // Clears file inputs and table
-function clearSite() {
+async function clearSite() {
     document.querySelector("#listTable tbody").innerHTML = "";
     document.querySelector("#hiddenTable tbody").innerHTML = "";
+    const defaultName = "Open a List from the Panel Above";
     document.getElementById("listNameLabel").innerText = defaultName;
 
     document.getElementById("fileInput").value = "";
     document.getElementById("fileInputOriginalList").value = "";
+
+    const recipiesHolder = document.getElementById("recipiesHolder");
+    recipiesHolder.innerHTML = "";
+    
+    const defaultRecipies = [
+        "minecraft:ladder",
+        "minecraft:gold_block",
+        "minecraft:stone_bricks",
+        "minecraft:armor_stand",
+        "minecraft:beetroot_soup"
+    ];
+    
+    for(const item of defaultRecipies) {
+        const recipies = await getRecipies(item);
+        for(const recipie of recipies)
+            recipiesHolder.append(recipie);
+    }
 }
 
 

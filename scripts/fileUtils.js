@@ -1,3 +1,16 @@
+async function convertPathToFile(path) {
+    try {
+        const response = await fetch(path);
+        if (!response.ok) throw new Error("HTTP " + response.status);
+        const blob = await response.blob();
+        const fileName = path.split("/").pop();
+        return new File([blob], fileName, { type: "application/json" });
+    } catch (e) {
+        console.warn("Can't load " + path, e);
+        return null;
+    }
+}
+
 function openFileJSON(file) {
     return new Promise((resolve) => {
         if (!file) {

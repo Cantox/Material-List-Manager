@@ -7,8 +7,6 @@ const originalListSchema = {
 
 const materialListSchema = {
     id : "string",
-    // item: "string" // Item png path (css class ??)
-    // recipie: "string" // Crafting json file (directly from .jar)
     count : "number",
     completed : "boolean",
     hidden : "boolean",
@@ -31,6 +29,7 @@ async function openList() {
 
     currentList = materialList;
     fillTable(materialList);
+    fillRecipies(materialList);
 }
 
 // Converts a litematica list to the site format and downloads the new json file

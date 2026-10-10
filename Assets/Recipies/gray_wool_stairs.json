@@ -1,0 +1,26 @@
+{
+  "recipies": [
+    [
+      "minecraft:gray_dye",
+      "minecraft:white_wool_stairs",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "minecraft:gray_wool",
+      "",
+      "",
+      "minecraft:gray_wool",
+      "minecraft:gray_wool",
+      "",
+      "minecraft:gray_wool",
+      "minecraft:gray_wool",
+      "minecraft:gray_wool"
+    ]
+  ]
+}

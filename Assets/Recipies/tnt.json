@@ -1,0 +1,15 @@
+{
+  "recipies": [
+    [
+      "minecraft:gunpowder",
+      "minecraft:sand",
+      "minecraft:gunpowder",
+      "minecraft:sand",
+      "minecraft:gunpowder",
+      "minecraft:sand",
+      "minecraft:gunpowder",
+      "minecraft:sand",
+      "minecraft:gunpowder"
+    ]
+  ]
+}
