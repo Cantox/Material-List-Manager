@@ -13,6 +13,13 @@ const materialListSchema = {
     notes : "string"
 };
 
+let categorySortingDict = null;
+async function init() {
+    const categorySortFile = await convertPathToFile("./Assets/creative_order.json");
+    categorySortingDict = await openFileJSON(categorySortFile);
+}
+init();
+
 // Opens a json list that is already in the site format
 async function openList() {
     const materialList = await openFileJSON( document.getElementById("fileInput").files[0] );
@@ -95,13 +102,17 @@ function sortItems(criteria) {
     if(!currentList) return;
 
     const validSorts = {
+        category: function(a, b) {
+            const posA = categorySortingDict[a.id] ? categorySortingDict[a.id] : -1;
+            const posB = categorySortingDict[b.id] ? categorySortingDict[b.id] : -1;
+            return posA > posB;
+        },
         id: (a, b) => formatBlockName(a.id).localeCompare( formatBlockName(b.id) ),
         idReversed: (a, b) => formatBlockName(b.id).localeCompare( formatBlockName(a.id) ),
         amount: (a, b) => b.count - a.count,
         amountReversed: (a, b) => a.count - b.count,
         completed: (a, b) => Number(b.completed) - Number(a.completed),
-        completedReversed: (a, b) => Number(a.completed) - Number(b.completed),
-        category: null
+        completedReversed: (a, b) => Number(a.completed) - Number(b.completed)
     };
 
     if(validSorts[criteria])
