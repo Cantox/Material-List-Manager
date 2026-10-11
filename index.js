@@ -109,7 +109,7 @@ async function fillRecipies(materialList) {
 }
 
 
-// Clears file inputs and table
+// Clears file inputs and table and resets recipies to default ones
 async function clearSite() {
     document.querySelector("#listTable tbody").innerHTML = "";
     document.querySelector("#hiddenTable tbody").innerHTML = "";
@@ -123,11 +123,10 @@ async function clearSite() {
     recipiesHolder.innerHTML = "";
     
     const defaultRecipies = [
-        "minecraft:ladder",
-        "minecraft:gold_block",
-        "minecraft:stone_bricks",
-        "minecraft:armor_stand",
-        "minecraft:beetroot_soup"
+        "minecraft:oak_planks",
+        "minecraft:stick",
+        "minecraft:barrel",
+        "minecraft:stone_bricks"
     ];
     
     for(const item of defaultRecipies) {

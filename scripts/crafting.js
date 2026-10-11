@@ -15,6 +15,7 @@ function getIconClassName(id) {
     return "rc-item rc-" + id.replace(/:/g, "_");
 }
 
+
 // Generates crafting recipies divs for the given item
 async function getRecipies(id) {
     const file = await convertPathToFile( recipieDir + getRecipieName(id) );
@@ -53,6 +54,7 @@ async function getRecipies(id) {
 }
 
 
+// Search functionality
 const searchInput = document.getElementById("recipieSearchInput");
 searchInput.addEventListener("input", function() {
     const recipiesHolder = document.getElementById("recipiesHolder");
