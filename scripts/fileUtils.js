@@ -1,3 +1,4 @@
+// Converts a file path (string) to file oject
 async function convertPathToFile(path) {
     try {
         const response = await fetch(path);
@@ -11,6 +12,7 @@ async function convertPathToFile(path) {
     }
 }
 
+// Opens a file json and returns the contents as a js object
 function openFileJSON(file) {
     return new Promise((resolve) => {
         if (!file) {
@@ -44,6 +46,7 @@ function openFileJSON(file) {
     }
 }
 
+// Converts a js object to a json file and downloads it
 function downloadObjectAsJSON(object, filename = "jsObject.json") {
     const jsonString = JSON.stringify(object, null, 2);
 

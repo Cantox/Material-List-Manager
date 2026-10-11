@@ -1,5 +1,3 @@
-// ! ADD RECIPIE SEARCHING
-
 const recipieDir = "./Assets/Recipies/";
 
 function getBlockName(id) {
@@ -17,8 +15,7 @@ function getIconClassName(id) {
     return "rc-item rc-" + id.replace(/:/g, "_");
 }
 
-
-
+// Generates crafting recipies divs for the given item
 async function getRecipies(id) {
     const file = await convertPathToFile( recipieDir + getRecipieName(id) );
     if(!file) return null;
@@ -54,3 +51,15 @@ async function getRecipies(id) {
 
     return recipieDivs;
 }
+
+
+const searchInput = document.getElementById("recipieSearchInput");
+searchInput.addEventListener("input", function() {
+    const recipiesHolder = document.getElementById("recipiesHolder");
+    const search = searchInput.value.trim().toLowerCase();
+    
+    recipiesHolder.querySelectorAll(":scope > div").forEach(div => {
+        const name = div.querySelector("label").textContent.toLowerCase();
+        div.style.display = name.includes(search) ? "" : "none";
+    });
+});
